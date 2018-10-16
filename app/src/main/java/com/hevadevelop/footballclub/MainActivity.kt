@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,18 +18,21 @@ class MainActivity : AppCompatActivity() {
         initData()
 
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = RecyclerViewAdapter(this, items)
+        list.adapter = RecyclerViewAdapter(this, items){
+            val toast = Toast.makeText(applicationContext, it.name, Toast.LENGTH_SHORT)
+            toast.show()
+        }
     }
 
     private fun initData() {
         val name = resources.getStringArray(R.array.club_name)
-        val image = resources.getStringArray(R.array.club_image)
+        val image = resources.obtainTypedArray(R.array.club_image)
         items.clear()
-//        for (i in name.indices) {
-//            items.add(Item(name[i],
-//                    image.getResourceId(i, 0)))
-//        }
-//
-//        image.recycle()
+        for (i in name.indices) {
+            items.add(Item(name[i],
+                    image.getResourceId(i, 0)))
+        }
+
+        image.recycle()
     }
 }

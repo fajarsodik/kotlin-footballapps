@@ -34,7 +34,6 @@ class TeamAdapter (var list: MutableList<TeamModel>, var listener: (TeamModel) -
         fun bindItem (items : TeamModel, listener : (TeamModel) -> Unit){
             textView.text = items.name
             Glide.with(itemView.context).load(items.image).into(imageView)
-//            Picasso.get().load(items.image).into(imageView)
             itemView.setOnClickListener {
                 listener(items)
             }

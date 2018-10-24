@@ -3,10 +3,8 @@ package com.hevadevelop.footballclub
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.widget.LinearLayout
 import com.hevadevelop.footballclub.adapter.TeamAdapter
-import com.hevadevelop.footballclub.listView.ItemViewClub
 import com.hevadevelop.footballclub.model.TeamModel
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
@@ -27,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 lparams(width = matchParent, height = wrapContent)
                 layoutManager = LinearLayoutManager(ctx)
                 adapter = TeamAdapter(clubItem) {
-
+                    startActivity<DetailTeam>("name" to it.name, "image" to it.image, "detail" to it.detail)
                 }
             }
         }
@@ -36,13 +34,14 @@ class MainActivity : AppCompatActivity() {
     private fun initData(){
         val name = resources.getStringArray(R.array.club_name)
         val image = resources.obtainTypedArray(R.array.club_image)
+        val detail = resources.getStringArray(R.array.club_detail)
 
         clubItem.clear()
 
         for (i in name.indices) {
-            clubItem.add(TeamModel(name[i], image.getResourceId(i, 0)))
+            clubItem.add(TeamModel(name[i], image.getResourceId(i, 0), detail[i]))
         }
-        //Recycle the typed array
+
         image.recycle()
     }
 }

@@ -2,23 +2,50 @@ package com.hevadevelop.footballclub
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import org.jetbrains.anko.*
 
 class DetailTeam : AppCompatActivity() {
 
-    private var name: String = ""
-    lateinit var nameTextView: TextView
+    private var nameIntent: String = ""
+    private var imageIntent: Int = 0
+    private var detailIntent: String = ""
+
+    lateinit var nameClub: TextView
+    lateinit var imageClub: ImageView
+    lateinit var detailClub: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        verticalLayout{
+        linearLayout{
+            orientation = LinearLayout.VERTICAL
+
             padding = dip(16)
-            nameTextView = textView()
+
+            imageClub = imageView {
+                this@linearLayout.gravity = Gravity.CENTER_HORIZONTAL
+            }.lparams(width = dip(100), height = dip(100))
+
+            nameClub = textView {
+                gravity = Gravity.CENTER
+            }
+
+            detailClub = textView {
+                topPadding = dip (10)
+            }
         }
 
         val intent = intent
-        name = intent.getStringExtra("name")
-        nameTextView.text = name
+        nameIntent = intent.getStringExtra("name")
+        imageIntent = intent.getIntExtra("image", 1)
+        detailIntent = intent.getStringExtra("detail")
+
+        nameClub.text = nameIntent
+        detailClub.text = detailIntent
+        Glide.with(this).load(imageIntent).into(imageClub)
     }
 }

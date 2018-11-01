@@ -26,7 +26,7 @@ class ItemViewClub : AnkoComponent<ViewGroup> {
 
             textView {
                 id = nameId
-                text = "Tapos FC"
+                text = context.getString(R.string.tapos_fc)
             }.lparams(matchParent, wrapContent){
                 margin = dip(10)
                 gravity = Gravity.CENTER_VERTICAL

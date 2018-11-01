@@ -45,3 +45,5 @@ class MainActivity : AppCompatActivity() {
         image.recycle()
     }
 }
+//TODO: https://thesportsdb.com/ untuk api submission 2
+

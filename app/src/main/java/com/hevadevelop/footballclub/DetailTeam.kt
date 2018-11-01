@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import org.jetbrains.anko.*
+import org.jetbrains.anko.support.v4.viewPager
 
 class DetailTeam : AppCompatActivity() {
 

@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name">Football Club</string>
+    <string name="tapos_fc">Tapos FC</string>
 
     <string-array name="club_name">
         <item>Barcelona FC</item>

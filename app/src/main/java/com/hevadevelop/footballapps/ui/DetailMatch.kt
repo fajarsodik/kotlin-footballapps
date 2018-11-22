@@ -10,6 +10,7 @@ import com.hevadevelop.footballapps.model.Events
 import com.hevadevelop.footballapps.model.Teams
 import com.hevadevelop.footballapps.presenter.TeamPresenter
 import com.hevadevelop.footballapps.R
+import com.hevadevelop.footballapps.R.layout.activity_detail_match
 import com.hevadevelop.footballapps.util.invisible
 import com.hevadevelop.footballapps.util.visible
 import com.hevadevelop.footballapps.view.TeamView
@@ -28,7 +29,7 @@ class DetailMatch : AppCompatActivity(), TeamView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_match)
+        setContentView(activity_detail_match)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         typeList = "lookupevent.php"

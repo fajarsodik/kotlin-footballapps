@@ -6,17 +6,20 @@
         android:id="@+id/bm_prev_match"
         android:enabled="true"
         android:title="@string/prev_match"
+        android:icon="@drawable/ic_toys"
         app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/bm_next_match"
         android:enabled="true"
         android:title="@string/next_match"
+        android:icon="@drawable/ic_event"
         app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/bm_favorite_match"
         android:enabled="true"
         android:title="@string/favorite"
+        android:icon="@drawable/ic_stars"
         app:showAsAction="ifRoom"/>
 </menu>

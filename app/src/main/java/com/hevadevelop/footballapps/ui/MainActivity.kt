@@ -5,8 +5,7 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import com.hevadevelop.footballapps.adapter.TabAdapter
 import com.hevadevelop.footballapps.R
-import com.hevadevelop.footballapps.R.id.bm_next_match
-import com.hevadevelop.footballapps.R.id.bm_prev_match
+import com.hevadevelop.footballapps.R.id.*
 import com.hevadevelop.footballapps.R.layout.activity_main
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,6 +22,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 bm_next_match -> {
                     loadNextMatchFragment(savedInstanceState)
+                }
+                bm_favorite_match -> {
+                    loadFavoriteFragment(savedInstanceState)
                 }
             }
             true
@@ -44,6 +46,15 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.main_container, NextEvent(), NextEvent::class.java.simpleName)
+                    .commit()
+        }
+    }
+
+    private fun loadFavoriteFragment(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.main_container,  FavoriteEvent(),FavoriteEvent::class.java.simpleName)
                     .commit()
         }
     }

@@ -54,11 +54,11 @@ class NextEvent: Fragment(), MainView {
     }
 
     override fun showLoading() {
-        progress_match.visible()
+        progress_match?.visible()
     }
 
     override fun hideLoading() {
-        progress_match.invisible()
+        progress_match?.invisible()
     }
 
     override fun showEventList(data: List<Events>?) {

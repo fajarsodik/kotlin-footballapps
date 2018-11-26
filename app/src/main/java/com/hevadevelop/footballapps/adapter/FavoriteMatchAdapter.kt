@@ -27,7 +27,6 @@ class FavoriteMatchAdapter(private val listFavoriteMatch: List<FavoriteMatch>, p
             itemView.tv_score_home.text = favoriteMatch.teamHomeScore
             itemView.tv_away_team.text = favoriteMatch.teamAwayName
             itemView.tv_score_away.text = favoriteMatch.teamAwayScore
-//            favoriteMatch.teamAwayScore
             itemView.item_match_layout.setOnClickListener {
                 listenerAdapter(favoriteMatch)
             }

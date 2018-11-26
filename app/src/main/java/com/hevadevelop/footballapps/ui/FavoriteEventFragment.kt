@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.hevadevelop.footballapps.R
 import com.hevadevelop.footballapps.adapter.FavoriteMatchAdapter
 import com.hevadevelop.footballapps.db.FavoriteMatch
@@ -17,7 +16,7 @@ import org.jetbrains.anko.db.select
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.support.v4.onRefresh
 
-class FavoriteEvent : Fragment(){
+class FavoriteEventFragment : Fragment(){
 
     private var favoritesMatch: MutableList<FavoriteMatch> = mutableListOf()
     private lateinit var adapter: FavoriteMatchAdapter

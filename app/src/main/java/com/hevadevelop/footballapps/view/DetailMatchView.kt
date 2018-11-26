@@ -3,7 +3,7 @@ package com.hevadevelop.footballapps.view
 import com.hevadevelop.footballapps.model.Events
 import com.hevadevelop.footballapps.model.Teams
 
-interface TeamView {
+interface DetailMatchView {
 
     fun showLoading()
     fun hideLoading()

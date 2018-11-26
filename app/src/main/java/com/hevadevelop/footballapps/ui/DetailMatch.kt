@@ -22,7 +22,7 @@ import com.hevadevelop.footballapps.db.FavoriteMatch
 import com.hevadevelop.footballapps.db.database
 import com.hevadevelop.footballapps.util.invisible
 import com.hevadevelop.footballapps.util.visible
-import com.hevadevelop.footballapps.view.TeamView
+import com.hevadevelop.footballapps.view.DetailMatchView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_match.*
 import org.jetbrains.anko.db.classParser
@@ -30,7 +30,7 @@ import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
 
-class DetailMatch : AppCompatActivity(), TeamView {
+class DetailMatch : AppCompatActivity(), DetailMatchView {
 
     private var eventsList: MutableList<Events> = mutableListOf()
     private var teamHomeList: MutableList<Teams> = mutableListOf()
@@ -88,10 +88,13 @@ class DetailMatch : AppCompatActivity(), TeamView {
                 true
             }
             add_to_favorite -> {
-                if (isFavorite) removeFromFavorite() else addToFavorite()
-
-                isFavorite = !isFavorite
-                setFavorite()
+                if (eventsList.isEmpty()) {
+                    Toast.makeText(this, "Load data", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (isFavorite) removeFromFavorite() else addToFavorite()
+                    isFavorite = !isFavorite
+                    setFavorite()
+                }
                 true
             }
             else -> super.onOptionsItemSelected(item)

@@ -18,7 +18,7 @@ import com.hevadevelop.footballapps.view.MainView
 import kotlinx.android.synthetic.main.fragment_match.*
 import org.jetbrains.anko.support.v4.startActivity
 
-class NextEvent: Fragment(), MainView {
+class NextEventFragment: Fragment(), MainView {
 
     private var eventsList: MutableList<Events> = mutableListOf()
     private lateinit var presenter: MainPresenter

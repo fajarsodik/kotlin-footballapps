@@ -1,9 +1,7 @@
 package com.hevadevelop.footballapps.ui
 
 import android.os.Bundle
-import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
-import com.hevadevelop.footballapps.adapter.TabAdapter
 import com.hevadevelop.footballapps.R
 import com.hevadevelop.footballapps.R.id.*
 import com.hevadevelop.footballapps.R.layout.activity_main
@@ -36,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.main_container, LastEvent(), LastEvent::class.java.simpleName)
+                    .replace(R.id.main_container, LastEventFragment(), LastEventFragment::class.java.simpleName)
                     .commit()
         }
     }
@@ -45,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.main_container, NextEvent(), NextEvent::class.java.simpleName)
+                    .replace(R.id.main_container, NextEventFragment(), NextEventFragment::class.java.simpleName)
                     .commit()
         }
     }
@@ -54,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.main_container,  FavoriteEvent(),FavoriteEvent::class.java.simpleName)
+                    .replace(R.id.main_container,  FavoriteEventFragment(),FavoriteEventFragment::class.java.simpleName)
                     .commit()
         }
     }
